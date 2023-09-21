@@ -1,11 +1,9 @@
 name: Apply Organization Membership
 on:
   workflow_dispatch: {}
-  push:
-    branches:
-      - 'main'
-    paths:
-      - "config/opendatahub-io/org.yaml"
+  schedule:
+    # Run this action at the bottom of every hour
+    - cron: '30 * * * *'
 jobs:
   peribolos:
     runs-on: ubuntu-latest

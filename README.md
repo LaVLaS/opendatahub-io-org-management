@@ -14,6 +14,8 @@ The application for membership in the opendatahub-io organization can be made by
 However, if you are already part of the opendatahub-io organization, you do not need to do this and can add yourself directly to the appropriate files.
 For example, to also add yourself to the opendatahub-io organization, you can navigate to `config/opendatahub-io/org.yaml` and add your GitHub username to the list of members (in alphabetical order)
 
+All membership updates will be scheduled to run at the bottom of every hour (XX:30) to ensure that organization membership updates are batched together.
+
 Requirements
 
 * Add only one new member per commit (if you add two members separate it in two commits

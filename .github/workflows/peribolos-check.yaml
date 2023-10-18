@@ -11,8 +11,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Check ODH organization membership
+        with: 
+          token: "${{ secrets.ORG_MANAGEMENT_TOKEN }}"
         run: |
-          debugging="${{ secrets.ORG_MANAGEMENT_TOKEN }}"
+          debugging="${{ inputs.token }}"
           echo "debugging length: ${#debugging}"
-          echo ${{ secrets.ORG_MANAGEMENT_TOKEN }} > /.github_token.txt
+          echo ${{ inputs.token }} > /.github_token.txt
           peribolos --github-token-path /.github_token.txt --config-path "config/opendatahub-io/org.yaml"  --fix-org --fix-org-members --fix-teams --fix-team-members --fix-team-repos --fix-repos
